@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+ }
 *{
     box-sizing: border-box;
     margin: 0;
@@ -21,6 +24,7 @@ nav {
     padding: 0.8rem 2rem;
     top: 0;
     position: sticky;
+    z-index: 9999;
 }
 .nav-toggle {
     display: none;
@@ -84,6 +88,7 @@ ul li a{
     text-decoration: none;
     color: rgb(81, 168, 219);
 }
+
 a.resume {
     text-decoration: none;
     border : solid 1px rgb(96, 163, 177);
@@ -102,6 +107,52 @@ a.resume:hover {
     align-items: center;
     
 }
+.welcome-msg {
+    font-size: 1rem;
+    color: rgb(96, 163, 177);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.name-heading {
+    font-size: 1.5rem;
+    color: rgb(41, 85, 110);
+    font-weight: 400;
+}
+
+.name {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: rgb(81, 168, 219);
+    font-family: cursive;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.i-m-a {
+    font-size: 1.5rem;
+    color: rgb(41, 85, 110);
+    font-weight: 400;
+}
+
+#hero-info {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: rgb(96, 163, 177);
+    font-family: cursive;
+    font-weight: 700;
+}
+#hero-info::after {
+    content: '|';
+    color: rgb(96, 163, 177);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
 .hero-name{
     height: 50%;
     width: 50%;
@@ -115,6 +166,7 @@ a.resume:hover {
     font-size: clamp(2rem, 5vw, 5rem);
     color: rgb(81, 168, 219);
     padding-top: 5px;
+    font-family: cursive;
 }
 .hero-image{
     height: 50%;
@@ -129,6 +181,7 @@ a.resume:hover {
 #hero-info{
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: rgb(96, 163, 177);
+    font-family: cursive;
 }
 .hero-socials {
     display: flex;
@@ -222,6 +275,7 @@ a.resume:hover {
     font-weight: bold;
     color: rgb(41, 85, 110);
     line-height: 2rem;
+    font-family: sans-serif;
 }
 
 .about-me-cont p {
@@ -338,3 +392,144 @@ a.resume:hover {
         grid-template-columns: 1fr;  /* single column on small screens */
     }
 }
+.fourth-page {
+    border: 1rem solid white;
+    border-top: none;
+    background-color: rgb(241, 241, 241);
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+.skills-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: rgb(96, 163, 177);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* centers all rows including the last one */
+    gap: 2rem;
+    max-width: 760px;  /* 4 cards × 150px + 3 gaps × 2rem ≈ 760px */
+}
+.skills-card{
+    height: auto;
+    width: 150px;
+    border: solid 1px rgb(96, 163, 177);
+    border-radius: 1rem;
+    background-color: #dbe7ffa7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+.skills-card-img{
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+.skills-card:hover {
+    transform: translateY(-5px);
+}
+.skill-name {
+    font-size: 1rem;
+    color: rgb(41, 85, 110);
+}
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #cce4ec;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0%;                        
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+.fill-html     { background-color: #e34c26; }
+.fill-css      { background-color: #264de4; }
+.fill-js       { background-color: #f7df1e; }
+.fill-tailwind { background-color: #38bdf8; }
+.fill-react    { background-color: #61dafb; }
+.fill-cpp      { background-color: #00599c; }
+.fill-c        { background-color: #283593; }
+.fill-vscode   { background-color: #007acc; }
+.fill-vercel   { background-color: #000000; }
+.fill-github   { background-color: #333333; }
+
+.skills-card.active { border-color: transparent; }
+
+.skills-card.active.card-html{ 
+    background-color: #fde8e2;
+    border: 2px solid #e34c26;;
+ }
+.skills-card.active.card-css  {
+     background-color: #e2e8fd;
+    border:2px solid #264de4;;
+    }
+.skills-card.active.card-js   {
+     background-color: #fefbe2;
+    border:2px solid #f7df1e;
+    }
+.skills-card.active.card-tailwind{
+     background-color: #e2f6fd;
+    border:2px solid #38bdf8;
+    }
+.skills-card.active.card-react{
+     background-color: #e2fafd;
+    border:2px solid #61dafb;;
+    }
+.skills-card.active.card-cpp  {
+     background-color: #e2edf8;
+    border:2px solid #00599c;
+    }
+.skills-card.active.card-c {
+     background-color: #e4e7f5;
+    border:2px solid #283593;
+    }
+.skills-card.active.card-vscode {
+     background-color: #e2f0fb;
+    border:2px solid #007acc;
+    }
+.skills-card.active.card-vercel {
+     background-color: #e8e8e8;
+    border:2px solid black;
+    }
+.skills-card.active.card-github {
+     background-color: #ebebeb;
+    border:2px solid #333333;
+    }
+ul li a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: rgb(81, 168, 219);
+    position: relative;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(81, 168, 219);
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}    
