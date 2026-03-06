@@ -80,7 +80,7 @@ const lcRank = document.querySelector(".lc-footer span:last-child");
 //Fetching fn
 async function lcData() {
     try {
-        const response = await fetch("https://alfa-leetcode-api-faisalshohag.vercel.app/aaryansingh31/");
+        const response = await fetch("https://alfa-leetcode-api.onrender.com/aaryansingh31/profile");
         const data = await response.json();
         lcTotal.textContent = data.totalSolved;
         lcEasy.textContent = data.easySolved;
