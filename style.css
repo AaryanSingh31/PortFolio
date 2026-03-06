@@ -532,4 +532,131 @@ ul li a::after {
 
 ul li a:hover::after {
     width: 100%;
-}    
+}
+.fifth-page {
+    border: 1rem solid white;
+    border-top: none;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+.ach-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: rgb(96, 163, 177);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.lc-card {
+    border: 1px solid rgb(96, 163, 177);
+    border-radius: 1rem;
+    background-color: #dbe7ffa7;
+    width: 420px;
+    height: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: transform 0.3s ease;
+}
+.lc-card:hover {
+    transform: translateY(-5px);
+}
+.lc-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+.lc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+.lc-img{
+    height: 5rem;
+    width: 10rem;
+    object-fit: cover;
+}
+.lc-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+.lc-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+.lc-total h2 {
+    font-size: 3rem;
+    color: rgb(81, 168, 219);
+    line-height: 1;
+}
+
+.lc-total p {
+    font-size: 0.85rem;
+    color: rgb(41, 85, 110);
+    font-weight: bold;
+}
+.lc-divider {
+    width: 1.75px;
+    height: 80px;
+    background-color: rgb(96, 163, 177);
+    opacity: 0.5;
+}
+.lc-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.lc-diff {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.diff-level {
+    font-size: 0.85rem;
+    font-weight: bold;
+    width: 55px;
+}
+.diff-count {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: rgb(41, 85, 110);
+    background-color: white;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid rgb(96, 163, 177);
+}
+.lc-diff.easy .diff-level {
+     color: #00b8a3;
+}
+.lc-diff.med .diff-level { 
+    color: #ffc01e; 
+}
+.lc-diff.hard .diff-level { 
+    color: #ff375f; 
+}
+.lc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(96, 163, 177, 0.4);
+    padding-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: rgb(41, 85, 110);
+}
+@media (max-width: 720px) {
+    .lc-card {
+        width: 90%;
+    }
+}   

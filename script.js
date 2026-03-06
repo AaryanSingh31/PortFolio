@@ -68,3 +68,34 @@ document.querySelectorAll('.skills-card').forEach(card => {
         if (!isActive) card.classList.add('active');
     });
 });
+console.log("Hello");
+
+//Leetcode API Work
+const lcTotal = document.querySelector(".lc-total");
+const lcEasy = document.querySelector(".lc-diff.easy .diff-count");
+const lcMed = document.querySelector(".lc-diff.easy .diff-count");
+const lcHard = document.querySelector(".lc-diff.easy .diff-count");
+const lcStreak = document.querySelector(".lc-footer span:first-child");
+const lcRank = document.querySelector(".lc-footer span:last-child");
+//Fetching fn
+async function lcData() {
+    try {
+        const response = await fetch("https://alfa-leetcode-api-faisalshohag.vercel.app/aaryansingh31/");
+        const data = await response.json();
+        lcTotal.textContent = data.totalSolved;
+        lcEasy.textContent = data.easySolved;
+        lcMed.textContent = data.mediumSolved;
+        lcHard.textContent = data.hardSolved;
+        lcRank.textContent = `Global Ranking : ${data.ranking}`;
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching Leetcode data:", error);
+        // hard coded values if API slows down
+        lcTotal.textContent = "103";
+        lcEasy.textContent = "43";
+        lcMed.textContent = "55";
+        lcHard.textContent = "5";
+        lcRank.textContent = "Global Rank : 1424209";
+    }
+}
+    lcData();
