@@ -71,12 +71,13 @@ document.querySelectorAll('.skills-card').forEach(card => {
 console.log("Hello");
 
 //Leetcode API Work
-const lcTotal = document.querySelector(".lc-total");
+const lcTotal = document.querySelector(".lc-total h2");
 const lcEasy = document.querySelector(".lc-diff.easy .diff-count");
-const lcMed = document.querySelector(".lc-diff.easy .diff-count");
-const lcHard = document.querySelector(".lc-diff.easy .diff-count");
-const lcStreak = document.querySelector(".lc-footer span:first-child");
-const lcRank = document.querySelector(".lc-footer span:last-child");
+const lcMed = document.querySelector(".lc-diff.med .diff-count");
+const lcHard = document.querySelector(".lc-diff.hard .diff-count");
+const lcCurrStreak = document.querySelector(".lc-streak");
+const lcActiveDays = document.querySelector(".lc-active");
+const lcRank = document.querySelector(".lc-rank");
 //Fetching fn
 async function lcData() {
     try {
@@ -94,8 +95,25 @@ async function lcData() {
         lcTotal.textContent = "103";
         lcEasy.textContent = "43";
         lcMed.textContent = "55";
-        lcHard.textContent = "5";
+        lcHard.textContent = "05";
         lcRank.textContent = "Global Rank : 1424209";
     }
 }
     lcData();
+async function fetchCalendar(){
+try{
+    const response = await fetch("https://alfa-leetcode-api.onrender.com/aaryansingh31/calendar");
+    data = await response.json();
+    console.log(data);
+    lcCurrStreak.textContent = `🔥Current Streak : ${data.streak} days`;
+    lcActiveDays.textContent = `Active days : ${data.totalActiveDays}`;
+    
+}
+catch(error){
+    console.error("Error fetching Leetcode data:", error);
+    //Hard Coded Val
+    lcCurrStreak.textContent = "Current Streak : 28 days";
+    lcActiveDays.textContent = "Active days : 91";
+  }
+}
+fetchCalendar();

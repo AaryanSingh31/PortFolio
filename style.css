@@ -554,7 +554,7 @@ ul li a:hover::after {
     border: 1px solid rgb(96, 163, 177);
     border-radius: 1rem;
     background-color: #dbe7ffa7;
-    width: 420px;
+    width: auto;
     height: auto;
     padding: 1.5rem;
     display: flex;
@@ -654,9 +654,20 @@ ul li a:hover::after {
     font-size: 0.85rem;
     font-weight: bold;
     color: rgb(41, 85, 110);
+    gap: 0.5rem;
 }
 @media (max-width: 720px) {
     .lc-card {
         width: 90%;
+    }
+    .lc-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        font-size: 0.78rem;
+    }
+
+    .lc-footer .lc-divider {
+        display: none;
     }
 }   
