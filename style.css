@@ -429,6 +429,7 @@ a.resume:hover {
     align-items: center;
     padding: 1rem;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 .skills-card-img{
     object-fit: cover;
@@ -511,6 +512,25 @@ a.resume:hover {
      background-color: #ebebeb;
     border:2px solid #333333;
     }
+    .skills-card.active::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(96, 163, 177, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple-effect 1.8s ease-out forwards;
+    pointer-events: none;
+}
+    @keyframes ripple-effect {
+        to {
+            transform: translate(-50%, -50%) scale(80);
+            opacity: 0;
+        }
+    }
 ul li a {
     margin: 0 1rem;
     text-decoration: none;
@@ -561,6 +581,7 @@ ul li a:hover::after {
     flex-direction: column;
     gap: 1.2rem;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 .lc-card:hover {
     transform: translateY(-5px);
@@ -670,4 +691,17 @@ ul li a:hover::after {
     .lc-footer .lc-divider {
         display: none;
     }
+}
+  .lc-card.active::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(96, 163, 177, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple-effect 0.6s ease-out forwards;
+    pointer-events: none;
 }   

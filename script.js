@@ -17,6 +17,7 @@ document.addEventListener('click', (e) => {
 window.addEventListener('scroll', () => {
     navtoggle.classList.remove('active');
     navLinks.classList.remove('active');
+
 });
 //Name Animation
 const words = ["Software Developer", "Web Developer", "Problem Solver"];
@@ -117,3 +118,8 @@ catch(error){
   }
 }
 fetchCalendar();
+//Effect for LC card
+const lcCard = document.querySelector(".lc-card");
+lcCard.addEventListener('click', () => {
+    lcCard.classList.toggle('active');
+});
