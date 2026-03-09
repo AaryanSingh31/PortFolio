@@ -123,3 +123,30 @@ const lcCard = document.querySelector(".lc-card");
 lcCard.addEventListener('click', () => {
     lcCard.classList.toggle('active');
 });
+//Code for CC Card
+const ccCard = document.querySelector(".cc-card");
+ccCard.addEventListener('click', () => {
+    ccCard.classList.toggle('active');
+});
+//Api for CC card
+const ccRatings = document.querySelector(".ratings");
+const ccContests = document.querySelector(".contests");
+const ccTotal = document.querySelector(".cc-total h2");
+
+//Fetcing fn
+async function ccData() {
+    console.log("Check");
+    try{
+        const response = await fetch("https://codechef-api.vercel.app/aaryan_singh31");
+        const data = await response.json();
+        console.log(data);
+    }
+    catch(error){
+        console.log("Error fetching CodeChef data: ", error);
+        //Hard coded values if API slows down
+        ccRatings.textContent = "Ratings : 1231";
+        ccContests.textContent = "Contests Participated : 7";
+        ccTotal.textContent = "100+";
+    }
+}
+ccData();
