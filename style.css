@@ -6,17 +6,40 @@ html {
     margin: 0;
     padding: 0;
 }
+/* :root {
+    --bg: linear-gradient(135deg, rgb(225, 235, 245), rgb(235, 245, 250), rgb(220, 235, 240));
+    --border: white;
+    --nav-bg: rgb(222, 231, 235);
+    --card-bg: #dbe7ffa7;
+    --text-primary: rgb(41, 85, 110);
+    --text-accent: rgb(81, 168, 219);
+    --theme-color: rgb(96, 163, 177);
+}
+body.dark-theme {
+    --bg: linear-gradient(135deg, rgb(15, 23, 42), rgb(20, 40, 60), rgb(10, 30, 50));
+    --border: rgb(20, 35, 55);
+    --nav-bg: rgba(15, 23, 42, 0.95);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: rgb(200, 220, 235);
+    --text-accent: rgb(100, 180, 220);
+    --theme-color: rgba(96, 163, 177, 0.6);
+} */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgb(225, 235, 245), rgb(235, 245, 250), rgb(220, 235, 240));
+}
 .first-page{
-    border: 1rem solid white;
+    border-left: 1rem solid white;
+    border-right: 1rem solid white;
+    border-top: 1rem solid white;
     height: 100vh;
     width: 100%;
-    background-color: rgb(241, 241, 241);
 
 }
 nav {
     border: 1rem solid white;
     border-bottom: 0;
-    background-color: rgb(222, 231, 235);
+    background: linear-gradient(135deg, rgb(225, 235, 245), rgb(235, 245, 250), rgb(220, 235, 240));
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -100,6 +123,92 @@ a.resume:hover {
     color: white;
     transition: 0.3s ease-in-out;
 }
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgb(97, 172, 186);
+    padding: 0.2rem 0.4rem;
+    border-radius: 20px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: rgb(34, 64, 82);
+    z-index: 9999;
+    position: fixed; 
+    right: 4.2rem;
+    top: 5.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-toggle:hover {
+    background-color: rgb(97, 172, 186);
+    color: white;
+}
+body.dark-theme {
+    background: linear-gradient(135deg, rgb(15, 23, 42), rgb(20, 40, 60), rgb(10, 30, 50));
+
+
+}
+
+body.dark-theme .first-page,
+body.dark-theme .second-page,
+body.dark-theme .third-page,
+body.dark-theme .fourth-page,
+body.dark-theme .fifth-page {
+    border-color: rgb(20, 35, 55);
+}
+
+body.dark-theme nav {
+    background: linear-gradient(135deg, rgb(15, 23, 42), rgb(20, 40, 60), rgb(10, 30, 50));
+    border-color: rgb(20, 35, 55);
+}
+
+body.dark-theme .about-me-cont,
+body.dark-theme .proj-card,
+body.dark-theme .skills-card,
+body.dark-theme .lc-card,
+body.dark-theme .cc-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(96, 163, 177, 0.5);
+}
+
+body.dark-theme .about-text p,
+body.dark-theme .card-body h3,
+body.dark-theme .skill-name,
+body.dark-theme .lc-total p,
+body.dark-theme .cc-total p {
+    color: rgb(200, 220, 235)
+}
+body.dark-theme .welcome-msg,
+body.dark-theme .name-heading,
+body.dark-theme .name,
+body.dark-theme .i-m-a,
+body.dark-theme #hero-info {
+    color: rgb(150, 200, 220);
+}
+body.dark-theme .hero-socials i {
+    color: rgb(150, 200, 220);
+}
+body.dark-theme .hero-socials i:hover {
+    color: rgb(100, 150, 170);
+}
+body.dark-theme a.resume {
+    border-color: rgb(150, 200, 220);
+    color: rgb(150, 200, 220);
+}
+body.dark-theme a.resume:hover {
+    background-color: rgb(150, 200, 220);
+    color: rgb(18, 18, 18);
+}
+body.dark-theme .theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgb(150, 200, 220);
+    color: rgb(150, 200, 220);
+}
+body.dark-theme .theme-toggle:hover {
+    background-color: rgb(150, 200, 220);
+    color: rgb(18, 18, 18);
+}
+
 .hero-cont {
     min-height: 70vh;
     display: flex;
@@ -230,9 +339,9 @@ a.resume:hover {
     }
 }
 .second-page{
-    border: 1rem solid white;
+    border-left: 1rem solid white;
+    border-right: 1rem solid white;
     border-top: none;
-    background-color: rgb(241, 241, 241);
     height: 100vh;
     width: 100%;
     display: flex;
@@ -308,10 +417,10 @@ a.resume:hover {
     }
 }
 .third-page {
-    border: 1rem solid white;
+    border-left: 1rem solid white;
+    border-right: 1rem solid white;
     border-top: none;
     padding: 4rem 2rem;
-    background-color: rgb(241, 241, 241);
 }
 .projects-heading {
     font-size: clamp(2rem, 4vw, 3.5rem);
@@ -393,9 +502,9 @@ a.resume:hover {
     }
 }
 .fourth-page {
-    border: 1rem solid white;
+    border-left: 1rem solid white;
+    border-right: 1rem solid white;
     border-top: none;
-    background-color: rgb(241, 241, 241);
     height: auto;
     width: 100%;
     display: flex;
@@ -556,7 +665,6 @@ ul li a:hover::after {
 .fifth-page {
     border: 1rem solid white;
     border-top: none;
-    background-color: rgb(241, 241, 241);
     width: 100%;
     display: flex;
     flex-direction: column;
